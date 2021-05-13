@@ -8,6 +8,7 @@ export const createCalendarCell = ({
   ref,
   cellWidth,
   content,
+  date,
   onClick,
 }: CellInterface) => {
   return (
@@ -18,8 +19,7 @@ export const createCalendarCell = ({
       cellWidth={cellWidth}
       onClick={(event: MouseEvent<HTMLTableDataCellElement>): void => {
         if (onClick) {
-          console.log("event 1 =", event.currentTarget.nodeValue);
-          onClick(event, "hello");
+          onClick(event, date);
         }
       }}
     >

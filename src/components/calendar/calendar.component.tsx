@@ -36,7 +36,7 @@ export const Calendar = ({ month = 1, year = 2021 }: CalendarInterface) => {
     );
   }
 
-  const onDayClick = (event: MouseEvent, props: string) => {
+  const onDayClick = (event: MouseEvent, props: object) => {
     event.stopPropagation();
     event.preventDefault();
     console.log("cell click = ", event);
@@ -54,7 +54,12 @@ export const Calendar = ({ month = 1, year = 2021 }: CalendarInterface) => {
         ref: cellRef,
         cellWidth: cellWidth,
         content: `${day}`,
-        onClick: (event: MouseEvent, props: string) => onDayClick(event, props),
+        date: {
+          year: year,
+          month: month,
+          day: day,
+        },
+        onClick: (event: MouseEvent, props: object) => onDayClick(event, props),
       })
     );
   }

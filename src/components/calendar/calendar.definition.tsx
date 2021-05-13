@@ -9,5 +9,6 @@ export interface CellInterface {
   ref: React.RefObject<HTMLTableDataCellElement>;
   cellWidth: number;
   content: string;
+  date?: object;
   onClick?: Function;
 }
